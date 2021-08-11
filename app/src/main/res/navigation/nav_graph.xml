@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/watchlistFragment">
+
+    <fragment
+        android:id="@+id/watchlistFragment"
+        android:name="com.miniapp.app.ui.watchlist.WatchlistFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_watchlist">
+        <action
+            android:id="@+id/action_homeFragment_to_streamFragment"
+            app:destination="@id/streamFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/streamFragment"
+        android:name="com.miniapp.app.ui.stream.StreamFragment"
+        android:label="fragment_stream"
+        tools:layout="@layout/fragment_stream" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.miniapp.app.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.miniapp.app.ui.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="com.miniapp.app.ui.portfolio.PortfolioFragment"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio" />
+</navigation>
