@@ -27,7 +27,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:textStyle="bold"
-                    app:drawableStartCompat="@mipmap/ic_logo_app" />
+                    app:drawableStartCompat="@drawable/ic_tmdb_top_bar_logo" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 

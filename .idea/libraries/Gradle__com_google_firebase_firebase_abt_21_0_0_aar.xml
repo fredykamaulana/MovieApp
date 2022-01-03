@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-abt:21.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/15268e4d908e00aea0987d0578068497/transformed/jetified-firebase-abt-21.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/62b312fd06a5f2006d962e91c26dd07b/transformed/jetified-firebase-abt-21.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/67ef5ea1bb07a1f446daedc6baae5f43/transformed/jetified-firebase-abt-21.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1deb58b36141c01ef7554b54e99f737a/transformed/jetified-firebase-abt-21.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ed7b4e5c7b5f359c9aad4afa7ce28982/transformed/jetified-firebase-abt-21.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a44c4500d0ece0a41c5dc88ab8f07662/transformed/jetified-firebase-abt-21.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a44c4500d0ece0a41c5dc88ab8f07662/transformed/jetified-firebase-abt-21.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a44c4500d0ece0a41c5dc88ab8f07662/transformed/jetified-firebase-abt-21.0.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-abt/21.0.0/7b2d56b2cae5e1744ac2a3ab7a8dfc4523bdbd0f/firebase-abt-21.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-abt/21.0.0/4f26643cad393fa4d1e2073fe4d4034b9dd2d690/firebase-abt-21.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

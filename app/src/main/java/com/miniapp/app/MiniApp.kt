@@ -10,7 +10,7 @@ class MiniApp : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@MiniApp)
-            modules(com.miniapp.app.framework.injection.modules)
+            modules()
         }
     }
 }
