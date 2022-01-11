@@ -2,20 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:icon="@drawable/ic_star_outline"
-        android:title="@string/menu_watch_list" />
+        android:id="@+id/fragment_movie_list"
+        android:icon="@drawable/ic_movie"
+        android:title="@string/menu_movie_list" />
     <item
-        android:icon="@drawable/ic_article"
-        android:title="@string/menu_stream" />
-    <item
-        android:id="@+id/searchFragment"
         android:icon="@drawable/ic_search"
-        android:title="@string/menu_search"/>
+        android:title="@string/menu_movie_search" />
     <item
-        android:icon="@drawable/ic_chat_bubble"
-        android:title="@string/menu_chat" />
-    <item
-        android:icon="@drawable/ic_pie_chart"
-        android:title="@string/menu_portfolio" />
+        android:icon="@drawable/ic_likes"
+        android:title="@string/menu_movie_likes"/>
 
 </menu>

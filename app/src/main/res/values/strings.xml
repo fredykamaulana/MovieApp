@@ -1,18 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="facebook_app_id">966303514160593</string>
-    <string name="fb_login_protocol_scheme">fb966303514160593</string>
-
-    <string name="menu_watch_list">Watchlist</string>
-    <string name="menu_stream">Stream</string>
-    <string name="menu_search">Search</string>
-    <string name="menu_chat">Chat</string>
-    <string name="menu_portfolio">Portfolio</string>
-
-    <string name="app_name">MiniApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_stream_fragment">Hello Stream fragment</string>
-    <string name="hello_search_fragment">Hello Search fragment</string>
-    <string name="hello_chat_fragment">Hello Chat fragment</string>
-    <string name="hello_portfolio_fragment">Hello Portfolio fragment</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_movie_list">Movies</string>
+    <string name="menu_movie_search">Search</string>
+    <string name="menu_movie_likes">Likes</string>
 </resources>

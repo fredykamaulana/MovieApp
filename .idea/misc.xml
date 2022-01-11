@@ -3,19 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable-v24/ic_article.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/background_circle_shape.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/background_ouval_radius50.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/background_rectange_radius8_shape.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_chat_bubble.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_likes.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_movie.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_pie_chart.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_search.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_star_outline.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/drawable/ic_tmdb_top_bar_logo.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/activity_login.xml" value="0.276268115942029" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/activity_main.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/fragment_home.xml" value="0.34782608695652173" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/fragment_watchlist.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/layout_item_movie_list.xml" value="0.276268115942029" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/layout/layout_item_watch_list.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/menu-v26/bottom_menu.xml" value="0.3625" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/app/src/main/res/menu/bottom_menu.xml" value="0.3625" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/background_ouval_radius50.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/background_ouval_radius50_gradient.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/layout/fragment_movie_list.xml" value="0.25" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/layout/layout_item_movie_list.xml" value="0.3428442028985507" />
       </map>
     </option>
   </component>

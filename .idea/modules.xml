@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MiniApp.iml" filepath="$PROJECT_DIR$/.idea/modules/MiniApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MiniApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MiniApp.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MiniApp.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MiniApp.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/movielist/MiniApp.movielist.iml" filepath="$PROJECT_DIR$/.idea/modules/movielist/MiniApp.movielist.iml" />
     </modules>
   </component>
 </project>
