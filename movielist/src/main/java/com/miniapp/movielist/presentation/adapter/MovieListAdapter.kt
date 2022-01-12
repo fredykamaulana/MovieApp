@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
-import com.miniapp.core.presentation.util.loadImage
+import com.miniapp.core.presentation.util.loadPosterImage
 import com.miniapp.movielist.databinding.LayoutItemMovieListBinding
 
 class MovieListAdapter : ListAdapter<MovieItemDomainModel, MovieListAdapter.ViewHolder>(DiffCallback()) {
@@ -25,7 +25,7 @@ class MovieListAdapter : ListAdapter<MovieItemDomainModel, MovieListAdapter.View
             binding.tvMovieTitle.text = movie.title
             binding.tvMovieRating.text = movie.voteAverage.toString()
             binding.tvMovieReleaseDate.text = movie.releaseDate
-            binding.imgMoviePoster.loadImage(movie.posterPath)
+            binding.imgMoviePoster.loadPosterImage(movie.posterPath)
         }
     }
 

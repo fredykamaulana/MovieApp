@@ -3,15 +3,12 @@ package com.miniapp.movielist.presentation.ui
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.ConcatAdapter
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import com.miniapp.core.data.source.vo.ResourceState
 import com.miniapp.core.presentation.base.BaseFragment
 import com.miniapp.movielist.R
 import com.miniapp.movielist.databinding.FragmentMovieListBinding
 import com.miniapp.movielist.di.injectKoinModules
-import com.miniapp.movielist.presentation.adapter.MovieListAdapter
+import com.miniapp.movielist.presentation.adapter.MovieCategoryAdapter
 import com.miniapp.movielist.presentation.viewmodel.MovieListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,10 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
 
     private val vm: MovieListViewModel by viewModel()
-    private val adapterPopular: MovieListAdapter by lazy { MovieListAdapter() }
-    private val adapterNowPlaying: MovieListAdapter by lazy { MovieListAdapter() }
-    private val adapterTopRated: MovieListAdapter by lazy { MovieListAdapter() }
-    private val adapterUpcoming: MovieListAdapter by lazy { MovieListAdapter() }
+    private val movieCategoryAdapter: MovieCategoryAdapter by lazy { MovieCategoryAdapter() }
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_movie_list
 
@@ -39,10 +33,10 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
     }
 
     private fun setupView() {
-        val snapHelper = LinearSnapHelper()
-        snapHelper.attachToRecyclerView(binding.rvWatchlist)
-        binding.rvWatchlist.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        binding.rvWatchlist.adapter = ConcatAdapter(adapterPopular,adapterNowPlaying,adapterTopRated,adapterUpcoming)
+        binding.rvWatchlist.adapter = movieCategoryAdapter
+        binding.swipeRefreshLayout.apply {
+            setOnRefreshListener { isRefreshing = false }
+        }
     }
 
     private fun setupObserver() {
@@ -53,12 +47,12 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
                 }
                 is ResourceState.Success -> {
                     binding.groupLoading.visibility = View.GONE
-                    adapterPopular.submitList(it.data)
                 }
                 is ResourceState.Error -> {
                     binding.groupLoading.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getPopularMovies() }
                 }
+                else -> {}
             }
         })
 
@@ -69,12 +63,12 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
                 }
                 is ResourceState.Success -> {
                     binding.groupLoading.visibility = View.GONE
-                    adapterNowPlaying.submitList(it.data)
                 }
                 is ResourceState.Error -> {
                     binding.groupLoading.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getNowPlayingMovies() }
                 }
+                else -> {}
             }
         })
 
@@ -85,12 +79,12 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
                 }
                 is ResourceState.Success -> {
                     binding.groupLoading.visibility = View.GONE
-                    adapterTopRated.submitList(it.data)
                 }
                 is ResourceState.Error -> {
                     binding.groupLoading.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getTopRatedMovies() }
                 }
+                else -> {}
             }
         })
 
@@ -101,12 +95,29 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
                 }
                 is ResourceState.Success -> {
                     binding.groupLoading.visibility = View.GONE
-                    adapterUpcoming.submitList(it.data)
                 }
                 is ResourceState.Error -> {
                     binding.groupLoading.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getUpcomingMovies() }
                 }
+                else -> {}
+            }
+        })
+
+        vm.getAllMovieList.observe(this, {
+            when (it) {
+                is ResourceState.Loading -> {
+                    binding.groupLoading.visibility = View.VISIBLE
+                }
+                is ResourceState.Success -> {
+                    binding.groupLoading.visibility = View.GONE
+                    movieCategoryAdapter.submitList(vm.groupByCategory(it.data).toMutableList())
+                }
+                is ResourceState.Error -> {
+                    binding.groupLoading.visibility = View.GONE
+                    showSnackBar(binding.root, it.message.toString()) { vm.getAllMovieList() }
+                }
+                else -> {}
             }
         })
     }

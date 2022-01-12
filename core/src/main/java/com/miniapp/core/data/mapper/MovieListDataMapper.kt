@@ -20,7 +20,8 @@ val movieDomainDataMapper = object : DataMapperAbstract<MovieItemEntity, MovieIt
             voteAverage = data.voteAverage ?: 0f,
             id = data.id ?: 0,
             adult = data.adult ?: false,
-            voteCount = data.voteCount ?: 0
+            voteCount = data.voteCount ?: 0,
+            category = data.category ?: ""
         )
     }
 }

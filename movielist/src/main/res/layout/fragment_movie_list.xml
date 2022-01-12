@@ -98,10 +98,12 @@
                         android:id="@+id/rvWatchlist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintTop_toBottomOf="@+id/imgBackdrop"
                         app:spanCount="2"
-                        tools:itemCount="10"
-                        tools:listitem="@layout/layout_item_movie_list" />
+                        tools:itemCount="4"
+                        tools:listitem="@layout/layout_item_movie_category" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

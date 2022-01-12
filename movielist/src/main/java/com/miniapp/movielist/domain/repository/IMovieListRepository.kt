@@ -13,4 +13,6 @@ interface IMovieListRepository {
 
     fun getUpcomingMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
 
+    fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
+
 }

@@ -9,10 +9,6 @@ class MovieListLocalDataSource(private val dao: MovieItemDao) {
         dao.insertMovieItem(movies)
     }
 
-    fun getAllMovieList(): Flow<List<MovieItemEntity>> {
-        return dao.getAllMovieList()
-    }
-
     fun getPopularMovieList(): Flow<List<MovieItemEntity>> {
         return dao.getPopularMovieList()
     }
@@ -27,5 +23,9 @@ class MovieListLocalDataSource(private val dao: MovieItemDao) {
 
     fun getUpcomingMovieList(): Flow<List<MovieItemEntity>> {
         return dao.getUpcomingMovieList()
+    }
+
+    fun getAllMovieList(): Flow<List<MovieItemEntity>> {
+        return dao.getAllMovieList()
     }
 }

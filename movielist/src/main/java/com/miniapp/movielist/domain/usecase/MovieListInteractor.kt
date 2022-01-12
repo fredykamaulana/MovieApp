@@ -18,4 +18,6 @@ class MovieListInteractor(private val repository: IMovieListRepository): IMovieL
     override fun getUpcomingMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>> =
         repository.getUpcomingMovieList()
 
+    override fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>> =
+        repository.getAllMovieList()
 }

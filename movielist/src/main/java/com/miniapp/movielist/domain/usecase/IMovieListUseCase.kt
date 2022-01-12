@@ -12,4 +12,6 @@ interface IMovieListUseCase {
     fun getTopRatedMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
 
     fun getUpcomingMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
+
+    fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
 }

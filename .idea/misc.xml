@@ -25,7 +25,9 @@
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/background_ouval_radius50.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/background_ouval_radius50_gradient.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/core/src/main/res/drawable/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/drawable/background_header_category_shape.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/layout/fragment_movie_list.xml" value="0.25" />
+        <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/layout/layout_item_movie_category.xml" value="0.25" />
         <entry key="..\:/Users/ramou/AndroidStudioProjects/MiniAppMovie/movielist/src/main/res/layout/layout_item_movie_list.xml" value="0.3428442028985507" />
       </map>
     </option>

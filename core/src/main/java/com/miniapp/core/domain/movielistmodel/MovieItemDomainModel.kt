@@ -14,5 +14,6 @@ data class MovieItemDomainModel(
     val voteAverage: Float,
     val id: Int,
     val adult: Boolean,
-    val voteCount: Int
+    val voteCount: Int,
+    val category: String
 )

@@ -24,7 +24,7 @@ fun AppCompatActivity.setupToolbar(
     }
 }
 
-fun ImageView.loadImage(posterPath: String) {
+fun ImageView.loadPosterImage(posterPath: String) {
     Glide.with(context)
         .load("${BuildConfig.IMG_URL}${posterPath}")
         .centerCrop()

@@ -118,4 +118,26 @@ class MovieListRepositoryImpl(
                 })
             }
         }.asFlow()
+
+    override fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>> =
+        object : NetworkBoundResource<List<MovieItemDomainModel>, List<MovieListDto.MovieItemDto>>() {
+
+            override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
+                return localDataSource.getAllMovieList().map { list ->
+                    list.map { movieDomainDataMapper.map(it) }
+                }
+            }
+
+            override fun shouldFetch(data: List<MovieItemDomainModel>?): Boolean {
+                return false
+            }
+
+            override suspend fun createCall(): Flow<RemoteResult<List<MovieListDto.MovieItemDto>>> {
+                TODO("Not yet implemented")
+            }
+
+            override suspend fun saveCallResult(data: List<MovieListDto.MovieItemDto>) {
+                TODO("Not yet implemented")
+            }
+        }.asFlow()
 }
