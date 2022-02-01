@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_movie_detail"
+    app:startDestination="@id/fragment_movie_detail">
+
+    <fragment
+        android:id="@+id/fragment_movie_detail"
+        android:name="com.miniapp.moviedetail.presentation.ui.MovieDetailFragment"
+        android:label="Movie Detail"
+        tools:layout="@layout/fragment_movie_detail">
+
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+
+        <deepLink app:uri="miniApp://movieDetail/{movieId}" />
+
+    </fragment>
+
+</navigation>

@@ -10,9 +10,9 @@
         android:padding="8dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMovieItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="@color/white_bone"
             app:cardCornerRadius="8dp"
             app:cardElevation="2dp">
 

@@ -13,7 +13,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/moviedetail" />
             <option value="$PROJECT_DIR$/movielist" />
+            <option value="$PROJECT_DIR$/moviesearch" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

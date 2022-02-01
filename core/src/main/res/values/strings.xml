@@ -2,5 +2,5 @@
     <string name="facebook_app_id">966303514160593</string>
     <string name="fb_login_protocol_scheme">fb966303514160593</string>
 
-    <string name="app_name">MiniApp</string>
+    <string name="app_name">Movie Information</string>
 </resources>

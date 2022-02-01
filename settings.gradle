@@ -2,3 +2,5 @@ include ':app'
 include ':core'
 rootProject.name = "MiniApp"
 include ':movielist'
+include ':moviesearch'
+include ':moviedetail'

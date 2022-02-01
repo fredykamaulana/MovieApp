@@ -4,7 +4,7 @@ import com.miniapp.core.data.source.local.entity.MovieItemEntity
 import com.miniapp.core.data.source.remote.response.MovieListDto
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
 
-val movieDomainDataMapper = object : DataMapperAbstract<MovieItemEntity, MovieItemDomainModel>() {
+val convertToMovieListDomainDataMapper = object : DataMapperAbstract<MovieItemEntity, MovieItemDomainModel>() {
     override fun map(data: MovieItemEntity): MovieItemDomainModel {
         return MovieItemDomainModel(
             overview = data.overview ?: "",
@@ -26,7 +26,7 @@ val movieDomainDataMapper = object : DataMapperAbstract<MovieItemEntity, MovieIt
     }
 }
 
-val movieEntityDataMapper = object : DataMapperAbstract<MovieListDto.MovieItemDto, MovieItemEntity>() {
+val convertToMovieListEntityDataMapper = object : DataMapperAbstract<MovieListDto.MovieItemDto, MovieItemEntity>() {
     override fun map(data: MovieListDto.MovieItemDto): MovieItemEntity {
         return MovieItemEntity(
             overview = data.overview ?: "",
@@ -34,7 +34,7 @@ val movieEntityDataMapper = object : DataMapperAbstract<MovieListDto.MovieItemDt
             originalTitle = data.originalTitle ?: "",
             video = data.video ?: false,
             title = data.title ?: "",
-            genreIds = data.genreIds ?: listOf(),
+            genreIds = data.genreIds ?: listOf(0),
             posterPath = data.posterPath ?: "",
             backdropPath = data.backdropPath ?: "",
             releaseDate = data.releaseDate ?: "",

@@ -14,8 +14,8 @@ dependencies{
     api "androidx.legacy:legacy-support-v4:${legacy_support_version}"
 
     //google api
-    api "com.google.android.gms:play-services-auth:${google_auth_version}"
-    api "com.google.android.gms:play-services-auth-api-phone:${google_auth_api_version}"
+//    api "com.google.android.gms:play-services-auth:${google_auth_version}"
+//    api "com.google.android.gms:play-services-auth-api-phone:${google_auth_api_version}"
 
     //facebook api
 //    api "com.facebook.fresco:fresco:${fb_fresco_version}"

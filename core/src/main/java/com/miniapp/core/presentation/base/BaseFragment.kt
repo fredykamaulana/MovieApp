@@ -24,6 +24,7 @@ abstract class BaseFragment<out B : ViewDataBinding> : Fragment() {
 
     override fun onAttach(context: Context) {
         injectKoinModules()
+        injectKoinModules()
         super.onAttach(context)
     }
 

@@ -32,7 +32,7 @@ data class MovieListDto(
         val title: String? = null,
 
         @field:Json(name = "genre_ids")
-        val genreIds: List<Int?>? = null,
+        val genreIds: List<Int?>? = listOf(),
 
         @field:Json(name = "poster_path")
         val posterPath: String? = null,

@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MiniApp.iml" filepath="$PROJECT_DIR$/.idea/modules/MiniApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MiniApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MiniApp.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/MiniApp.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/MiniApp.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moviedetail/MiniApp.moviedetail.iml" filepath="$PROJECT_DIR$/.idea/modules/moviedetail/MiniApp.moviedetail.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/movielist/MiniApp.movielist.iml" filepath="$PROJECT_DIR$/.idea/modules/movielist/MiniApp.movielist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/moviesearch/MiniApp.moviesearch.iml" filepath="$PROJECT_DIR$/.idea/modules/moviesearch/MiniApp.moviesearch.iml" />
     </modules>
   </component>
 </project>

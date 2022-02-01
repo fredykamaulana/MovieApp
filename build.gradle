@@ -20,7 +20,7 @@ buildscript {
         retrofit_version = "2.9.0"
         retrofit_interceptor_version = "4.9.0"
         retrofit_moshi_version = "1.8.0"
-        room_version = "2.4.0"
+        room_version = "2.4.1"
         coroutines_version = "1.5.1"
         paging_version = "3.1.0"
         firebase_crashlytics_version = "18.2.6"

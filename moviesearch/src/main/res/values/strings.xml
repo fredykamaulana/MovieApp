@@ -1,0 +1,4 @@
+<resources>
+    <!--Search Fragment-->
+    <string name="search_fragment_search">Search</string>
+</resources>

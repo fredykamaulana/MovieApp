@@ -1,22 +1,26 @@
 package com.miniapp.movielist.presentation.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.miniapp.core.data.source.vo.ResourceState
 import com.miniapp.core.presentation.base.BaseFragment
 import com.miniapp.movielist.R
 import com.miniapp.movielist.databinding.FragmentMovieListBinding
 import com.miniapp.movielist.di.injectKoinModules
 import com.miniapp.movielist.presentation.adapter.MovieCategoryAdapter
+import com.miniapp.core.presentation.OnItemClickListener
 import com.miniapp.movielist.presentation.viewmodel.MovieListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
+class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickListener {
 
     private val vm: MovieListViewModel by viewModel()
-    private val movieCategoryAdapter: MovieCategoryAdapter by lazy { MovieCategoryAdapter() }
+    private val movieCategoryAdapter: MovieCategoryAdapter by lazy { MovieCategoryAdapter(this) }
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_movie_list
 
@@ -28,8 +32,8 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.fragment = this
-        setupView()
         setupObserver()
+        setupView()
     }
 
     private fun setupView() {
@@ -39,17 +43,18 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setupObserver() {
         vm.popularMovies.observe(viewLifecycleOwner, {
             when (it) {
                 is ResourceState.Loading -> {
-                    binding.groupLoading.visibility = View.VISIBLE
+                    binding.layoutLoading.root.visibility = View.VISIBLE
                 }
                 is ResourceState.Success -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                 }
                 is ResourceState.Error -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getPopularMovies() }
                 }
                 else -> {}
@@ -59,13 +64,13 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
         vm.nowPlayingMovies.observe(viewLifecycleOwner, {
             when (it) {
                 is ResourceState.Loading -> {
-                    binding.groupLoading.visibility = View.VISIBLE
+                    binding.layoutLoading.root.visibility = View.VISIBLE
                 }
                 is ResourceState.Success -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                 }
                 is ResourceState.Error -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getNowPlayingMovies() }
                 }
                 else -> {}
@@ -75,13 +80,13 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
         vm.topRatedMovies.observe(viewLifecycleOwner, {
             when (it) {
                 is ResourceState.Loading -> {
-                    binding.groupLoading.visibility = View.VISIBLE
+                    binding.layoutLoading.root.visibility = View.VISIBLE
                 }
                 is ResourceState.Success -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                 }
                 is ResourceState.Error -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getTopRatedMovies() }
                 }
                 else -> {}
@@ -91,13 +96,13 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
         vm.upcomingMovies.observe(viewLifecycleOwner, {
             when (it) {
                 is ResourceState.Loading -> {
-                    binding.groupLoading.visibility = View.VISIBLE
+                    binding.layoutLoading.root.visibility = View.VISIBLE
                 }
                 is ResourceState.Success -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                 }
                 is ResourceState.Error -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getUpcomingMovies() }
                 }
                 else -> {}
@@ -107,19 +112,25 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>() {
         vm.getAllMovieList.observe(this, {
             when (it) {
                 is ResourceState.Loading -> {
-                    binding.groupLoading.visibility = View.VISIBLE
+                    binding.layoutLoading.root.visibility = View.VISIBLE
                 }
                 is ResourceState.Success -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     movieCategoryAdapter.submitList(vm.groupByCategory(it.data).toMutableList())
+                    movieCategoryAdapter.notifyDataSetChanged()
                 }
                 is ResourceState.Error -> {
-                    binding.groupLoading.visibility = View.GONE
+                    binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getAllMovieList() }
                 }
                 else -> {}
             }
         })
+    }
+
+    override fun onClick(movieId: Int) {
+        val uri = Uri.parse("miniApp://movieDetail/$movieId")
+        findNavController().navigate(uri)
     }
 
 }

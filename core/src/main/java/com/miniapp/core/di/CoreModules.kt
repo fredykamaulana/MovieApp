@@ -4,6 +4,9 @@ package com.miniapp.core.di
 import androidx.room.Room
 import com.miniapp.core.BuildConfig
 import com.miniapp.core.data.source.local.database.MovieDatabase
+import com.miniapp.core.data.source.remote.service.MovieDetailService
+import com.miniapp.core.data.source.remote.service.MovieListService
+import com.miniapp.core.data.source.remote.service.MovieSearchService
 import com.miniapp.core.dispatcher.DispatcherProviderImpl
 import com.miniapp.core.dispatcher.IDispatcherProvider
 import okhttp3.OkHttpClient
@@ -53,11 +56,26 @@ val databaseModule: Module = module {
     }
 }
 
-/*val dispatcherModule: Module = module {
+val daoModule: Module = module {
+    single { get<MovieDatabase>().movieItemDao() }
+    single { get<MovieDatabase>().movieDetailDao() }
+    single { get<MovieDatabase>().movieSearchDao() }
+}
+
+val apiModule: Module = module {
+    single { get<Retrofit>().create(MovieListService::class.java) }
+    single { get<Retrofit>().create(MovieDetailService::class.java) }
+    single { get<Retrofit>().create(MovieSearchService::class.java) }
+}
+
+val dispatcherModule: Module = module {
     factory<IDispatcherProvider> { DispatcherProviderImpl() }
-}*/
+}
 
 val modules = listOf(
     networkModule,
     databaseModule,
+    daoModule,
+    apiModule,
+    dispatcherModule
 )

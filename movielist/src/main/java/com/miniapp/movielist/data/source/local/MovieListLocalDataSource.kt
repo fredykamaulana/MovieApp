@@ -1,6 +1,7 @@
 package com.miniapp.movielist.data.source.local
 
 import com.miniapp.core.data.source.local.dao.MovieItemDao
+import com.miniapp.core.data.source.local.entity.MovieDetailEntity
 import com.miniapp.core.data.source.local.entity.MovieItemEntity
 import kotlinx.coroutines.flow.Flow
 

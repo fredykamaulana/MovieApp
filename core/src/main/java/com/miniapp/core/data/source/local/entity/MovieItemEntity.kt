@@ -3,11 +3,8 @@ package com.miniapp.core.data.source.local.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
-import com.miniapp.core.data.source.local.utils.Converters
 
 @Entity(tableName = "movie_item")
-@TypeConverters(Converters::class)
 data class MovieItemEntity(
     @ColumnInfo(name = "overview")
     val overview: String? = null,

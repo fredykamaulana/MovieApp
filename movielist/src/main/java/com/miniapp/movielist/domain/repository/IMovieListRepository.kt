@@ -1,6 +1,7 @@
 package com.miniapp.movielist.domain.repository
 
 import com.miniapp.core.data.source.vo.ResourceState
+import com.miniapp.core.domain.moviedetailmodel.MovieDetailDomainModel
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
 import kotlinx.coroutines.flow.Flow
 
@@ -14,5 +15,4 @@ interface IMovieListRepository {
     fun getUpcomingMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
 
     fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>>
-
 }

@@ -22,12 +22,13 @@ android {
         vectorDrawables.useSupportLibrary = true
         buildConfigField "String", "BASE_URL", API_URL
         buildConfigField "String", "IMG_URL", IMG_URL
+        buildConfigField "String", "IMG_URL_HD", IMG_URL_HD
         buildConfigField "String", "API_KEY", API_KEY
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -52,4 +53,6 @@ dependencies {
     //module
     implementation project(':core')
     implementation project(':movielist')
+    implementation project(':moviesearch')
+    implementation project(':moviedetail')
 }

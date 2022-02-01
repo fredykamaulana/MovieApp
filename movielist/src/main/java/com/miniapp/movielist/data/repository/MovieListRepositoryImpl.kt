@@ -4,15 +4,14 @@ import com.miniapp.core.data.networkboundresource.NetworkBoundResource
 import com.miniapp.core.data.source.remote.utils.RemoteResult
 import com.miniapp.core.data.source.vo.ResourceState
 import com.miniapp.core.dispatcher.IDispatcherProvider
-import com.miniapp.core.data.mapper.movieDomainDataMapper
+import com.miniapp.core.data.mapper.convertToMovieListDomainDataMapper
 import com.miniapp.movielist.data.source.local.MovieListLocalDataSource
 import com.miniapp.movielist.data.source.remote.MovieListRemoteDataSource
 import com.miniapp.core.data.source.remote.response.MovieListDto
-import com.miniapp.core.data.mapper.movieEntityDataMapper
+import com.miniapp.core.data.mapper.convertToMovieListEntityDataMapper
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
 import com.miniapp.movielist.domain.repository.IMovieListRepository
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 
 class MovieListRepositoryImpl(
     private val dispatcher: IDispatcherProvider,
@@ -25,7 +24,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
                 return localDataSource.getPopularMovieList().map { list ->
-                    list.map { movieDomainDataMapper.map(it) }
+                    list.map { convertToMovieListDomainDataMapper.map(it) }
                 }
             }
 
@@ -39,7 +38,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun saveCallResult(data: List<MovieListDto.MovieItemDto>) {
                 localDataSource.insertMovieListToDB(data.map {
-                    movieEntityDataMapper.map(it).copy(category = "popular")
+                    convertToMovieListEntityDataMapper.map(it).copy(category = "popular")
                 })
             }
         }.asFlow()
@@ -50,7 +49,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
                 return localDataSource.getNowPlayingMovieList().map { list ->
-                    list.map { movieDomainDataMapper.map(it) }
+                    list.map { convertToMovieListDomainDataMapper.map(it) }
                 }
             }
 
@@ -64,7 +63,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun saveCallResult(data: List<MovieListDto.MovieItemDto>) {
                 localDataSource.insertMovieListToDB(data.map {
-                    movieEntityDataMapper.map(it).copy(category = "now_playing")
+                    convertToMovieListEntityDataMapper.map(it).copy(category = "now_playing")
                 })
             }
         }.asFlow()
@@ -75,7 +74,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
                 return localDataSource.getTopRatedMovieList().map { list ->
-                    list.map { movieDomainDataMapper.map(it) }
+                    list.map { convertToMovieListDomainDataMapper.map(it) }
                 }
             }
 
@@ -89,7 +88,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun saveCallResult(data: List<MovieListDto.MovieItemDto>) {
                 localDataSource.insertMovieListToDB(data.map {
-                    movieEntityDataMapper.map(it).copy(category = "top_rated")
+                    convertToMovieListEntityDataMapper.map(it).copy(category = "top_rated")
                 })
             }
         }.asFlow()
@@ -100,7 +99,7 @@ class MovieListRepositoryImpl(
 
             override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
                 return localDataSource.getUpcomingMovieList().map { list ->
-                    list.map { movieDomainDataMapper.map(it) }
+                    list.map { convertToMovieListDomainDataMapper.map(it) }
                 }
             }
 
@@ -114,17 +113,18 @@ class MovieListRepositoryImpl(
 
             override suspend fun saveCallResult(data: List<MovieListDto.MovieItemDto>) {
                 localDataSource.insertMovieListToDB(data.map {
-                    movieEntityDataMapper.map(it).copy(category = "upcoming")
+                    convertToMovieListEntityDataMapper.map(it).copy(category = "upcoming")
                 })
             }
         }.asFlow()
 
     override fun getAllMovieList(): Flow<ResourceState<List<MovieItemDomainModel>>> =
-        object : NetworkBoundResource<List<MovieItemDomainModel>, List<MovieListDto.MovieItemDto>>() {
+        object :
+            NetworkBoundResource<List<MovieItemDomainModel>, List<MovieListDto.MovieItemDto>>() {
 
             override suspend fun loadFromDB(): Flow<List<MovieItemDomainModel>> {
                 return localDataSource.getAllMovieList().map { list ->
-                    list.map { movieDomainDataMapper.map(it) }
+                    list.map { convertToMovieListDomainDataMapper.map(it) }
                 }
             }
 
