@@ -10,7 +10,8 @@
         android:icon="@drawable/ic_search"
         android:title="@string/menu_movie_search" />
     <item
+        android:id="@+id/nav_movie_favourite"
         android:icon="@drawable/ic_likes"
-        android:title="@string/menu_movie_likes"/>
+        android:title="@string/menu_movie_favourite"/>
 
 </menu>

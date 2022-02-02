@@ -7,7 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.miniapp.core.data.source.remote.utils.RemoteResult
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
 import com.miniapp.moviesearch.domain.usecase.IMovieSearchUseCase
-import kotlinx.coroutines.*
+import kotlinx.coroutines.ObsoleteCoroutinesApi
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.last
 
 class MovieSearchViewModel(private val useCase: IMovieSearchUseCase) : ViewModel() {

@@ -13,8 +13,20 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-196" />
-                            <option name="y" value="-197" />
+                            <option name="x" value="-195" />
+                            <option name="y" value="-223" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="nav_movie_favourite">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-195" />
+                            <option name="y" value="-53" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -37,8 +49,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-196" />
-                            <option name="y" value="-94" />
+                            <option name="x" value="-195" />
+                            <option name="y" value="-139" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -60,6 +72,28 @@
               <option name="myPositions">
                 <map>
                   <entry key="fragment_movie_detail">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </LayoutPositions>
+          </value>
+        </entry>
+        <entry key="nav_movie_favourite.xml">
+          <value>
+            <LayoutPositions>
+              <option name="myPositions">
+                <map>
+                  <entry key="fragment_movie_favourite">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">

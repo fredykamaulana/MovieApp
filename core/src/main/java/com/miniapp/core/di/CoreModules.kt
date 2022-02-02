@@ -60,6 +60,7 @@ val daoModule: Module = module {
     single { get<MovieDatabase>().movieItemDao() }
     single { get<MovieDatabase>().movieDetailDao() }
     single { get<MovieDatabase>().movieSearchDao() }
+    single { get<MovieDatabase>().movieFavouriteDao() }
 }
 
 val apiModule: Module = module {

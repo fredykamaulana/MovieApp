@@ -4,6 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.miniapp.core.data.source.local.dao.MovieDetailDao
+import com.miniapp.core.data.source.local.dao.MovieFavouriteDao
 import com.miniapp.core.data.source.local.dao.MovieSearchDao
 import com.miniapp.core.data.source.local.dao.MovieItemDao
 import com.miniapp.core.data.source.local.entity.MovieDetailEntity
@@ -25,4 +26,5 @@ abstract class MovieDatabase : RoomDatabase() {
     abstract fun movieItemDao(): MovieItemDao
     abstract fun movieDetailDao(): MovieDetailDao
     abstract fun movieSearchDao(): MovieSearchDao
+    abstract fun movieFavouriteDao(): MovieFavouriteDao
 }

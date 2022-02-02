@@ -2,5 +2,6 @@
 <resources>
     <string name="menu_movie_list">Movies</string>
     <string name="menu_movie_search">Search</string>
-    <string name="menu_movie_likes">Likes</string>
+    <string name="menu_movie_favourite">Favourite</string>
+    <string name="title_moviefavourite">Movie Favourite</string>
 </resources>

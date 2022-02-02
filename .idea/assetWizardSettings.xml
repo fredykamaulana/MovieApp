@@ -332,9 +332,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="0d253f" />
-                            <entry key="outputName" value="ic_baseline_favorite_filled" />
-                            <entry key="sourceFile" value="C:\Users\ramou\Downloads\undraw_movie_night_re_9umk.svg" />
+                            <entry key="outputName" value="ic_empty_list_data" />
+                            <entry key="sourceFile" value="C:\Users\ramou\Downloads\undraw_no_data_re_kwbl.svg" />
                           </map>
                         </option>
                       </PersistentState>

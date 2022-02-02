@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import com.miniapp.core.data.source.remote.utils.RemoteResult
 import com.miniapp.core.presentation.OnItemClickListener
@@ -33,6 +34,7 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.fragment = this
+
         observeMovieSearch()
         setupView()
     }
@@ -71,12 +73,16 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
     private fun observeMovieSearch() {
         vm.searchResult.observe(viewLifecycleOwner) {
             when (it) {
-                is RemoteResult.Empty -> {}
+                is RemoteResult.Empty -> { binding.layoutEmptyList.root.visibility = View.VISIBLE }
                 is RemoteResult.Success -> {
+                    if (it.data.isNotEmpty()) binding.layoutEmptyList.root.visibility = View.GONE
+                    else binding.layoutEmptyList.root.visibility = View.VISIBLE
+
                     adapter.submitList(it.data)
                     adapter.notifyDataSetChanged()
                 }
                 is RemoteResult.Error -> {
+                    binding.layoutEmptyList.root.visibility = View.VISIBLE
                     showSnackBar(binding.root, "Terjadi kesalahan saat mengambil data")
                 }
             }

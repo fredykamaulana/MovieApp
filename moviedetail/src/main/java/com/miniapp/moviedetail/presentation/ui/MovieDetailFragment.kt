@@ -34,17 +34,12 @@ class MovieDetailFragment : BaseFragment<FragmentMovieDetailBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.fragment = this
-        setupArguments()
         setupObserver()
     }
 
     override fun onResume() {
         super.onResume()
         vm.getMovieDetailById()
-    }
-
-    private fun setupArguments() {
-
     }
 
     private fun setupObserver() {
@@ -84,6 +79,14 @@ class MovieDetailFragment : BaseFragment<FragmentMovieDetailBinding>() {
         binding.tvLanguage.text = detail?.spokenLanguagesName?.toSingleString() ?: ""
         binding.tvAudience.text = if (detail?.adult == true) "Adult" else "All Ages"
         binding.tvSites.text = detail?.homepage ?: ""
+
+        if (detail?.favourite == true){
+            binding.ivFavouriteFilled.visibility = View.VISIBLE
+            binding.ivFavourite.visibility = View.GONE
+        } else {
+            binding.ivFavouriteFilled.visibility = View.GONE
+            binding.ivFavourite.visibility = View.VISIBLE
+        }
 
         binding.ivFavourite.setOnClickListener {
             val fav = detail?.favourite

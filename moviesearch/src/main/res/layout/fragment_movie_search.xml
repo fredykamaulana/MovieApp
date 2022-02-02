@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="fragment"
             type="com.miniapp.moviesearch.presentation.ui.MovieSearchFragment" />
@@ -15,69 +16,93 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.MovieSearchFragment">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/rvSearchMovie"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvSearchMovieDesc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="16dp"
-            android:text="Search many of movies information"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toTopOf="@id/tvSearchMovie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/tvSearchMovie"
-            style="@style/Widget.AppCompat.SearchView.ActionBar"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/background_ouval_radius50"
-            app:iconifiedByDefault="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSearchMovieDesc"
-            app:layout_constraintVertical_bias="0.10"
-            app:queryHint="@string/search_fragment_search" />
+            android:fillViewport="true"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:background="@drawable/background_ouval_radius50_gradient"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:paddingHorizontal="32dp"
-            android:text="@string/search_fragment_search"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            app:cornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="@id/tvSearchMovie"
-            app:layout_constraintEnd_toEndOf="@id/tvSearchMovie"
-            app:layout_constraintTop_toTopOf="@+id/tvSearchMovie" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearchMovie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="32dp"
-            android:paddingVertical="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/tvSearchMovie"
-            tools:itemCount="10"
-            tools:listitem="@layout/layout_item_movie_search" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/rvSearchMovie"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSearchMovieDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    android:text="Search many of movies information"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvSearchMovie"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/tvSearchMovie"
+                    style="@style/Widget.AppCompat.SearchView.ActionBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/background_ouval_radius50"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSearchMovieDesc"
+                    app:layout_constraintVertical_bias="0.10"
+                    app:queryHint="@string/search_fragment_search" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_ouval_radius50_gradient"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingHorizontal="32dp"
+                    android:text="@string/search_fragment_search"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSearchMovie"
+                    app:layout_constraintEnd_toEndOf="@id/tvSearchMovie"
+                    app:layout_constraintTop_toTopOf="@+id/tvSearchMovie" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSearchMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="32dp"
+                    android:paddingVertical="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tvSearchMovie"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/layout_item_movie_search" />
+
+                <include
+                    android:id="@+id/layoutEmptyList"
+                    layout="@layout/layout_empty_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rvSearchMovie" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

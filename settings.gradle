@@ -4,3 +4,4 @@ rootProject.name = "MiniApp"
 include ':movielist'
 include ':moviesearch'
 include ':moviedetail'
+include ':moviefavourite'

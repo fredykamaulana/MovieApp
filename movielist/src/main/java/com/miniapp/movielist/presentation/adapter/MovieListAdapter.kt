@@ -30,10 +30,7 @@ class MovieListAdapter(private val listener: OnItemClickListener) :
             binding.tvMovieReleaseDate.text = movie.releaseDate
             binding.imgMoviePoster.loadPosterImage(movie.posterPath)
             binding.pbMovieRating.progress = (movie.voteAverage  * 10).toInt()
-
-            binding.cardMovieItem.setOnClickListener {
-                listener.onClick(movie.id)
-            }
+            binding.cardMovieItem.setOnClickListener { listener.onClick(movie.id) }
 
             binding.executePendingBindings()
         }
