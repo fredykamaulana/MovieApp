@@ -22,7 +22,7 @@ data class MovieDetailEntity(
     val backdropPath: String? = null,
 
     @ColumnInfo(name = "revenue")
-    val revenue: Int? = null,
+    val revenue: Long? = null,
 
     @ColumnInfo(name = "genres_name")
     val genresName: List<String?>? = null,

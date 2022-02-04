@@ -6,7 +6,7 @@ data class MovieDetailDomainModel(
     val video: Boolean,
     val title: String,
     val backdropPath: String,
-    val revenue: Int,
+    val revenue: Long,
     val genresName: List<String?>,
     val genresId: List<Int?>,
     val popularity: Double,

@@ -20,7 +20,7 @@ data class MovieDetailDto(
     val backdropPath: String? = null,
 
     @field:Json(name = "revenue")
-    val revenue: Int? = null,
+    val revenue: Long? = null,
 
     @field:Json(name = "genres")
     val genres: List<GenresItem?>? = null,
