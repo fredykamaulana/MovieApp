@@ -60,3 +60,7 @@ dependencies {
     implementation project(':moviesearch')
     implementation project(':moviedetail')
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.0.2'
+}
