@@ -74,6 +74,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../moviedetail/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../moviedetail/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../moviedetail/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../moviedetail/build/generated/source/kapt/debugUnitTest" isTestSource="true" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../moviedetail/build/generated/source/kaptKotlin/debugUnitTest" isTestSource="true" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../moviedetail/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../moviedetail/build" />
     </content>
