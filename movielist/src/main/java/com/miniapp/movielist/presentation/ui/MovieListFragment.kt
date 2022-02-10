@@ -57,7 +57,6 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                     binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getPopularMovies() }
                 }
-                else -> {}
             }
         })
 
@@ -73,7 +72,6 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                     binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getNowPlayingMovies() }
                 }
-                else -> {}
             }
         })
 
@@ -89,7 +87,6 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                     binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getTopRatedMovies() }
                 }
-                else -> {}
             }
         })
 
@@ -105,7 +102,6 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                     binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getUpcomingMovies() }
                 }
-                else -> {}
             }
         })
 
@@ -123,7 +119,6 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                     binding.layoutLoading.root.visibility = View.GONE
                     showSnackBar(binding.root, it.message.toString()) { vm.getAllMovieList() }
                 }
-                else -> {}
             }
         })
     }

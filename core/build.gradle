@@ -48,9 +48,6 @@ android {
 
 dependencies {
 
-    //kotlin androidx
-    api "androidx.core:core-ktx:${androidx_core_version}"
-
     //koin
     api "org.koin:koin-android:${koin_version}"
     api "org.koin:koin-androidx-viewmodel:${koin_version}"
@@ -85,12 +82,6 @@ dependencies {
 
     //paging
     api "androidx.paging:paging-runtime-ktx:${paging_version}"
-
-    //firebase
-//    implementation "com.google.firebase:firebase-crashlytics:${firebase_crashlytics_version}"
-//    implementation "com.google.firebase:firebase-analytics:${firebase_analytics_version}"
-//    implementation "com.google.firebase:firebase-messaging:${firebase_messaging_version}"
-//    implementation "com.google.firebase:firebase-config:${firebase_config_version}"
 
     //test
     testApi "junit:junit:${junit_version}"

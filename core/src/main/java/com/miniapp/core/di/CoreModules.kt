@@ -28,14 +28,21 @@ private val loadModules by lazy {
 val networkModule: Module = module {
 
     single {
-        OkHttpClient.Builder()
-            .addInterceptor(
-                HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)
-                    .setLevel(HttpLoggingInterceptor.Level.BODY)
-            )
-            .connectTimeout(1, TimeUnit.MINUTES)
-            .readTimeout(1, TimeUnit.MINUTES)
-            .build()
+        if (BuildConfig.DEBUG){
+            OkHttpClient.Builder()
+                .addInterceptor(
+                    HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)
+                        .setLevel(HttpLoggingInterceptor.Level.BODY)
+                )
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(1, TimeUnit.MINUTES)
+                .build()
+        } else {
+            OkHttpClient.Builder()
+                .connectTimeout(1, TimeUnit.MINUTES)
+                .readTimeout(1, TimeUnit.MINUTES)
+                .build()
+        }
     }
 
     single {

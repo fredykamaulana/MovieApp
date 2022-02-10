@@ -13,15 +13,7 @@ dependencies{
     api "androidx.swiperefreshlayout:swiperefreshlayout:${swiperefresh_version}"
     api "androidx.legacy:legacy-support-v4:${legacy_support_version}"
 
-    //google api
-//    api "com.google.android.gms:play-services-auth:${google_auth_version}"
-//    api "com.google.android.gms:play-services-auth-api-phone:${google_auth_api_version}"
-
-    //facebook api
-//    api "com.facebook.fresco:fresco:${fb_fresco_version}"
-//    api "com.facebook.android:facebook-core:${fb_core_version}"
-//    api "com.facebook.android:facebook-login:${fb_login_version}"
-//    api "com.facebook.shimmer:shimmer:${fb_shimmer_version}"
+    //api "com.facebook.shimmer:shimmer:${fb_shimmer_version}"
 
     //glide
     api "com.github.bumptech.glide:glide:${glide_version}"

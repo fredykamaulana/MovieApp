@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/fragment_movie_favourite">
+    app:startDestination="@id/fragment_movie_favourite"
+    tools:ignore="UnusedResources">
 
     <fragment
         android:id="@+id/fragment_movie_favourite"

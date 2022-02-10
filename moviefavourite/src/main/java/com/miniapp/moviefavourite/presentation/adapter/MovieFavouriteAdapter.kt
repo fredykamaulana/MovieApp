@@ -15,6 +15,18 @@ class MovieFavouriteAdapter(private val listener: OnItemClickListener) :
 
     class ViewHolder(private val binding: LayoutItemMovieFavouriteBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(detail: MovieDetailDomainModel, listener: OnItemClickListener) {
+            binding.imgMoviePoster.loadPosterImage(detail.posterPath)
+            binding.tvMovieTitle.text = detail.originalTitle
+            binding.tvMovieReleaseDate.text = detail.releaseDate
+            binding.tvMovieRating.text = detail.voteAverage.toString()
+            binding.pbMovieRating.progress = detail.voteAverage.toInt().times(10)
+            binding.cardMovieItem.setOnClickListener { listener.onClick(detail.id) }
+
+            binding.executePendingBindings()
+        }
+
         companion object {
             fun create(parent: ViewGroup): ViewHolder {
                 val inflater = LayoutInflater.from(parent.context)
@@ -22,17 +34,6 @@ class MovieFavouriteAdapter(private val listener: OnItemClickListener) :
 
                 return ViewHolder(binding)
             }
-        }
-
-        fun bind(detail: MovieDetailDomainModel, listener: OnItemClickListener) {
-            binding.imgMoviePoster.loadPosterImage(detail.posterPath)
-            binding.tvMovieTitle.text = detail.title
-            binding.tvMovieReleaseDate.text = detail.releaseDate
-            binding.tvMovieRating.text = detail.voteAverage.toString()
-            binding.pbMovieRating.progress = detail.voteAverage.toInt().times(10)
-            binding.cardMovieItem.setOnClickListener { listener.onClick(detail.id) }
-
-            binding.executePendingBindings()
         }
     }
 

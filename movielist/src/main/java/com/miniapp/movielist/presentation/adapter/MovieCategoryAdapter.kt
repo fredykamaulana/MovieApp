@@ -17,14 +17,6 @@ class MovieCategoryAdapter(private val listener: OnItemClickListener) :
 
         private val movieListAdapter by lazy { MovieListAdapter(listener) }
 
-        companion object {
-            fun create(parent: ViewGroup, listener: OnItemClickListener): ViewHolder {
-                val inflater = LayoutInflater.from(parent.context)
-                val binding = LayoutItemMovieCategoryBinding.inflate(inflater)
-                return ViewHolder(binding, listener)
-            }
-        }
-
         fun bind(movieList: List<MovieItemDomainModel>) {
             val category = when (movieList[0].category) {
                 "popular" -> "Popular"
@@ -38,6 +30,14 @@ class MovieCategoryAdapter(private val listener: OnItemClickListener) :
             binding.rvMovieCategory.adapter = movieListAdapter
 
             binding.executePendingBindings()
+        }
+
+        companion object {
+            fun create(parent: ViewGroup, listener: OnItemClickListener): ViewHolder {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = LayoutItemMovieCategoryBinding.inflate(inflater)
+                return ViewHolder(binding, listener)
+            }
         }
     }
 

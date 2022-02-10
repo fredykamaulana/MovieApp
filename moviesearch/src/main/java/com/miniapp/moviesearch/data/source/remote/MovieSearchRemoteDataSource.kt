@@ -17,19 +17,11 @@ class MovieSearchRemoteDataSource(private val service: MovieSearchService) : Saf
             service.getSearchMovieList(BuildConfig.API_KEY, query).results?.map {
                 MovieItemDomainModel(
                     originalTitle = it.originalTitle ?: "",
-                    originalLanguage = it.originalLanguage ?: "",
-                    video = it.video ?: false,
                     title = it.title ?: "",
-                    backdropPath = it.backdropPath ?: "",
-                    overview = it.overview ?: "",
-                    genreIds = it.genreIds ?: listOf(),
                     posterPath = it.posterPath ?: "",
                     releaseDate = it.releaseDate ?: "",
-                    popularity = it.popularity ?: 0.0,
                     voteAverage = it.voteAverage ?: 0.0F,
                     id = it.id ?: 0,
-                    adult = it.adult ?: false,
-                    voteCount = it.voteCount ?: 0,
                     category = "search"
                 )
             } ?: listOf()

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.miniapp.core
 
 import com.google.android.play.core.splitcompat.SplitCompatApplication

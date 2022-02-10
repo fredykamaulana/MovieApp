@@ -1,11 +1,10 @@
 package com.miniapp.movielist.data.source.remote
 
 import com.miniapp.core.BuildConfig
-import com.miniapp.core.data.source.remote.response.MovieDetailDto
-import com.miniapp.core.data.source.remote.utils.RemoteResult
-import com.miniapp.core.data.source.remote.utils.SafeApiCall
 import com.miniapp.core.data.source.remote.response.MovieListDto
 import com.miniapp.core.data.source.remote.service.MovieListService
+import com.miniapp.core.data.source.remote.utils.RemoteResult
+import com.miniapp.core.data.source.remote.utils.SafeApiCall
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 

@@ -15,14 +15,6 @@ class MovieSearchAdapter(private val listener: OnItemClickListener) :
 
     class ViewHolder(private val binding: LayoutItemMovieSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        companion object {
-            fun create(parent: ViewGroup): ViewHolder {
-                val inflater = LayoutInflater.from(parent.context)
-                val binding = LayoutItemMovieSearchBinding.inflate(inflater, parent, false)
-
-                return ViewHolder(binding)
-            }
-        }
 
         fun bind(movie: MovieItemDomainModel, listener: OnItemClickListener) {
             binding.ivMovieSearchThumbnail.loadPosterImage(movie.posterPath)
@@ -35,6 +27,15 @@ class MovieSearchAdapter(private val listener: OnItemClickListener) :
             }
 
             binding.executePendingBindings()
+        }
+
+        companion object {
+            fun create(parent: ViewGroup): ViewHolder {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = LayoutItemMovieSearchBinding.inflate(inflater, parent, false)
+
+                return ViewHolder(binding)
+            }
         }
     }
 

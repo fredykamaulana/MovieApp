@@ -59,7 +59,6 @@ class MovieDetailFragment : BaseFragment<FragmentMovieDetailBinding>() {
                         vm.getMovieDetailById()
                     }
                 }
-                else -> {}
             }
         }
     }

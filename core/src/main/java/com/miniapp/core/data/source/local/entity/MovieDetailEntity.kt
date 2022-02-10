@@ -6,17 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "movie_detail")
 data class MovieDetailEntity(
-    @ColumnInfo(name = "original_language")
-    val originalLanguage: String? = null,
-
-    @ColumnInfo(name = "imdb_id")
-    val imdbId: String? = null,
-
-    @ColumnInfo(name = "video")
-    val video: Boolean? = null,
-
-    @ColumnInfo(name = "title")
-    val title: String? = null,
 
     @ColumnInfo(name = "backdrop_path")
     val backdropPath: String? = null,
@@ -30,33 +19,15 @@ data class MovieDetailEntity(
     @ColumnInfo(name = "genres_id")
     val genresId: List<Int?>? = null,
 
-    @ColumnInfo(name = "popularity")
-    val popularity: Double? = null,
-
-    @ColumnInfo(name = "production_countries_code")
-    val productionCountriesCode: List<String?>? = null,
-
-    @ColumnInfo(name = "production_countries_name")
-    val productionCountriesName: List<String?>? = null,
-
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Int? = null,
-
-    @ColumnInfo(name = "vote_count")
-    val voteCount: Int? = null,
-
-    @ColumnInfo(name = "budget")
-    val budget: Int? = null,
 
     @ColumnInfo(name = "overview")
     val overview: String? = null,
 
     @ColumnInfo(name = "original_title")
     val originalTitle: String? = null,
-
-    @ColumnInfo(name = "runtime")
-    val runtime: Int? = null,
 
     @ColumnInfo(name = "poster_path")
     val posterPath: String? = null,
@@ -84,9 +55,6 @@ data class MovieDetailEntity(
 
     @ColumnInfo(name = "vote_average")
     val voteAverage: Double? = null,
-
-    @ColumnInfo(name = "tagline")
-    val tagline: String? = null,
 
     @ColumnInfo(name = "adult")
     val adult: Boolean? = null,

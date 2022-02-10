@@ -30,7 +30,7 @@ class MovieDetailRepositoryImpl(
             }
 
             override fun shouldFetch(data: MovieDetailDomainModel?): Boolean {
-                return data?.title?.isEmpty() ?: false || data == null
+                return data?.originalTitle?.isEmpty() ?: false || data == null
             }
 
             override suspend fun createCall(): Flow<RemoteResult<MovieDetailDto>> {

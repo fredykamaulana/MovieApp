@@ -1,7 +1,6 @@
 package com.miniapp.movielist.domain.usecase
 
 import com.miniapp.core.data.source.vo.ResourceState
-import com.miniapp.core.domain.moviedetailmodel.MovieDetailDomainModel
 import com.miniapp.core.domain.movielistmodel.MovieItemDomainModel
 import kotlinx.coroutines.flow.Flow
 

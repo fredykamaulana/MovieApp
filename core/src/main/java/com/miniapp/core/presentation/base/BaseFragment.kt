@@ -15,9 +15,9 @@ import com.miniapp.core.di.injectKoinModules
 abstract class BaseFragment<out B : ViewDataBinding> : Fragment() {
 
     val binding: B
-        get() = mViewDataBinding!!
+        get() = mViewDataBinding
 
-    private var mViewDataBinding: B? = null
+    private lateinit var mViewDataBinding: B
 
     @LayoutRes
     abstract fun getLayoutResourceId(): Int
@@ -32,8 +32,8 @@ abstract class BaseFragment<out B : ViewDataBinding> : Fragment() {
         injectKoinModules()
         mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutResourceId(), container, false)
         with(mViewDataBinding) {
-            this?.lifecycleOwner = viewLifecycleOwner
-            this?.executePendingBindings()
+            this.lifecycleOwner = viewLifecycleOwner
+            this.executePendingBindings()
         }
         return binding.root
     }
@@ -47,10 +47,5 @@ abstract class BaseFragment<out B : ViewDataBinding> : Fragment() {
         Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE)
             .setAction(action) { actionClick() }
             .show()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        mViewDataBinding = null
     }
 }

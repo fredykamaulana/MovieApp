@@ -4,18 +4,6 @@ import com.squareup.moshi.Json
 
 data class MovieDetailDto(
 
-    @field:Json(name = "original_language")
-    val originalLanguage: String? = null,
-
-    @field:Json(name = "imdb_id")
-    val imdbId: String? = null,
-
-    @field:Json(name = "video")
-    val video: Boolean? = null,
-
-    @field:Json(name = "title")
-    val title: String? = null,
-
     @field:Json(name = "backdrop_path")
     val backdropPath: String? = null,
 
@@ -25,29 +13,14 @@ data class MovieDetailDto(
     @field:Json(name = "genres")
     val genres: List<GenresItem?>? = null,
 
-    @field:Json(name = "popularity")
-    val popularity: Double? = null,
-
-    @field:Json(name = "production_countries")
-    val productionCountries: List<ProductionCountriesItem?>? = null,
-
     @field:Json(name = "id")
     val id: Int? = null,
-
-    @field:Json(name = "vote_count")
-    val voteCount: Int? = null,
-
-    @field:Json(name = "budget")
-    val budget: Int? = null,
 
     @field:Json(name = "overview")
     val overview: String? = null,
 
     @field:Json(name = "original_title")
     val originalTitle: String? = null,
-
-    @field:Json(name = "runtime")
-    val runtime: Int? = null,
 
     @field:Json(name = "poster_path")
     val posterPath: String? = null,
@@ -63,9 +36,6 @@ data class MovieDetailDto(
 
     @field:Json(name = "vote_average")
     val voteAverage: Double? = null,
-
-    @field:Json(name = "tagline")
-    val tagline: String? = null,
 
     @field:Json(name = "adult")
     val adult: Boolean? = null,
@@ -99,15 +69,6 @@ data class GenresItem(
 
     @field:Json(name = "id")
     val id: Int? = null
-)
-
-data class ProductionCountriesItem(
-
-    @field:Json(name = "iso_3166_1")
-    val iso31661: String? = null,
-
-    @field:Json(name = "name")
-    val name: String? = null
 )
 
 data class SpokenLanguagesItem(

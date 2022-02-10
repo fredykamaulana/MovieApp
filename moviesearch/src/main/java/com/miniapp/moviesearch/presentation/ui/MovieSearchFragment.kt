@@ -5,7 +5,6 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import com.miniapp.core.data.source.remote.utils.RemoteResult
 import com.miniapp.core.presentation.OnItemClickListener
@@ -50,9 +49,6 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    if (newText?.isNotEmpty() == true || newText?.isNotBlank() == true) {
-                        vm.search(newText)
-                    }
                     return false
                 }
             }

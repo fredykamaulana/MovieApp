@@ -15,14 +15,6 @@ class MovieListAdapter(private val listener: OnItemClickListener) :
 
     class ViewHolder(private val binding: LayoutItemMovieListBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        companion object {
-            fun create(parent: ViewGroup): ViewHolder {
-                val inflater = LayoutInflater.from(parent.context)
-                val binding = LayoutItemMovieListBinding.inflate(inflater)
-
-                return ViewHolder(binding)
-            }
-        }
 
         fun bind(movie: MovieItemDomainModel, listener: OnItemClickListener) {
             binding.tvMovieTitle.text = movie.title
@@ -33,6 +25,15 @@ class MovieListAdapter(private val listener: OnItemClickListener) :
             binding.cardMovieItem.setOnClickListener { listener.onClick(movie.id) }
 
             binding.executePendingBindings()
+        }
+
+        companion object {
+            fun create(parent: ViewGroup): ViewHolder {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = LayoutItemMovieListBinding.inflate(inflater)
+
+                return ViewHolder(binding)
+            }
         }
     }
 
