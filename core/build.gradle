@@ -88,5 +88,10 @@ dependencies {
     androidTestApi "androidx.test.ext:junit:${junit_ext_version}"
     androidTestApi "androidx.test.espresso:espresso-core:${espresso_core_version}"
 
+    //security
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+
+    //dynamic features
     implementation "com.google.android.play:core:${play_core_version}"
 }

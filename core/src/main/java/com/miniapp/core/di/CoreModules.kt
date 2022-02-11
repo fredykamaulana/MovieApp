@@ -9,6 +9,8 @@ import com.miniapp.core.data.source.remote.service.MovieListService
 import com.miniapp.core.data.source.remote.service.MovieSearchService
 import com.miniapp.core.dispatcher.DispatcherProviderImpl
 import com.miniapp.core.dispatcher.IDispatcherProvider
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -56,10 +58,14 @@ val networkModule: Module = module {
 
 val databaseModule: Module = module {
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("movieApp".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovieDatabase::class.java, "MovieDatabase.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
