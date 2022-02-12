@@ -29,6 +29,10 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        /*debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }*/
     }
 
     compileOptions {
@@ -89,9 +93,12 @@ dependencies {
     androidTestApi "androidx.test.espresso:espresso-core:${espresso_core_version}"
 
     //security
-    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
-    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+    implementation "net.zetetic:android-database-sqlcipher:$zetetic_version"
+    implementation "androidx.sqlite:sqlite-ktx:$sqlite_version"
 
     //dynamic features
     implementation "com.google.android.play:core:${play_core_version}"
+
+    //lottie
+    api "com.airbnb.android:lottie:$lottie_version"
 }

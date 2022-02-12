@@ -25,8 +25,6 @@ class MovieSearchAdapter(private val listener: OnItemClickListener) :
             binding.cardMovieSearchItem.setOnClickListener {
                 listener.onClick(movie.id)
             }
-
-            binding.executePendingBindings()
         }
 
         companion object {

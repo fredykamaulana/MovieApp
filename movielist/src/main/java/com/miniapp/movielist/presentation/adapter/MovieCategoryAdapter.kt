@@ -28,8 +28,6 @@ class MovieCategoryAdapter(private val listener: OnItemClickListener) :
             binding.tvTitleCategory.text = category
             movieListAdapter.submitList(movieList)
             binding.rvMovieCategory.adapter = movieListAdapter
-
-            binding.executePendingBindings()
         }
 
         companion object {

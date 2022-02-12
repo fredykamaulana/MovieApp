@@ -11,6 +11,7 @@ import com.miniapp.core.dispatcher.DispatcherProviderImpl
 import com.miniapp.core.dispatcher.IDispatcherProvider
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -30,17 +31,27 @@ private val loadModules by lazy {
 val networkModule: Module = module {
 
     single {
+        val host ="api.themoviedb.org"
+        val certificatePinner = CertificatePinner.Builder()
+            .add(host, "sha256/oD/WAoRPvbez1Y2dfYfuo4yujAcYHXdv1Ivb2v2MOKk=")
+            .add(host, "sha256/JSMzqOOrtyOT1kmau6zKhgT676hGgczD5VMdRMyJZFA=")
+            .add(host, "sha256/++MBgDH5WGvL9Bcn5Be30cRcL0f5O+NyoXuWtQdX1aI=")
+            .add(host, "sha256/KwccWaCgrnaw6tsrrSO61FgLacNgG2MMLq8GE6+oP5I=")
+            .build()
+
         if (BuildConfig.DEBUG){
             OkHttpClient.Builder()
                 .addInterceptor(
                     HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)
                         .setLevel(HttpLoggingInterceptor.Level.BODY)
                 )
+                .certificatePinner(certificatePinner)
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .build()
         } else {
             OkHttpClient.Builder()
+                .certificatePinner(certificatePinner)
                 .connectTimeout(1, TimeUnit.MINUTES)
                 .readTimeout(1, TimeUnit.MINUTES)
                 .build()

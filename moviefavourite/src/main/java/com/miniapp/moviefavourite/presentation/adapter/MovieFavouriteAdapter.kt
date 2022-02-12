@@ -23,8 +23,6 @@ class MovieFavouriteAdapter(private val listener: OnItemClickListener) :
             binding.tvMovieRating.text = detail.voteAverage.toString()
             binding.pbMovieRating.progress = detail.voteAverage.toInt().times(10)
             binding.cardMovieItem.setOnClickListener { listener.onClick(detail.id) }
-
-            binding.executePendingBindings()
         }
 
         companion object {
