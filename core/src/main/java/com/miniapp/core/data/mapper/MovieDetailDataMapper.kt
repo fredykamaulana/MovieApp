@@ -42,6 +42,7 @@ val convertToMovieDetailEntityDataMapper = object : DataMapperAbstract<MovieDeta
             id = data.id ?: 0,
             overview = data.overview ?: "",
             originalTitle = data.originalTitle ?: "",
+            posterPath = data.posterPath ?: "",
             spokenLanguagesCode = data.spokenLanguages?.map { it?.iso6391 },
             spokenLanguagesName = data.spokenLanguages?.map { it?.name },
             productionCompaniesLogo = data.productionCompanies?.map { it?.logoPath },
