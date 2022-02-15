@@ -38,7 +38,7 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="horizontal"
         android:paddingVertical="16dp"
-        android:paddingStart="16dp"
+        android:paddingHorizontal="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="@id/iv_header"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,18 +19,25 @@
 
 # Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,
 # JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
+#noinspection ShrinkerUnresolvedReference
 -keep class * extends com.google.gson.TypeAdapter
+#noinspection ShrinkerUnresolvedReference
 -keep class * implements com.google.gson.TypeAdapterFactory
+#noinspection ShrinkerUnresolvedReference
 -keep class * implements com.google.gson.JsonSerializer
+#noinspection ShrinkerUnresolvedReference
 -keep class * implements com.google.gson.JsonDeserializer
 
 # Prevent R8 from leaving Data object members always null
 -keepclassmembers,allowobfuscation class * {
+  #noinspection ShrinkerUnresolvedReference
   @com.google.gson.annotations.SerializedName <fields>;
 }
 
 # Retain generic signatures of TypeToken and its subclasses with R8 version 3.0 and higher.
+#noinspection ShrinkerUnresolvedReference
 -keep,allowobfuscation,allowshrinking class com.google.gson.reflect.TypeToken
+#noinspection ShrinkerUnresolvedReference
 -keep,allowobfuscation,allowshrinking class * extends com.google.gson.reflect.TypeToken
 
 ##---------------End: proguard configuration for Gson  ----------
@@ -61,6 +68,7 @@
 
 # Top-level functions that can only be used by Kotlin.
 -dontwarn retrofit2.KotlinExtensions
+#noinspection ShrinkerUnresolvedReference
 -dontwarn retrofit2.KotlinExtensions$*
 
 # With R8 full mode, it sees no subtypes of Retrofit interfaces since they are created with a Proxy
@@ -113,11 +121,14 @@
 -keepnames class * implements android.os.Parcelable {
     public static final ** CREATOR;
 }
+#noinspection ShrinkerUnresolvedReference
 -keep interface org.parceler.Parcel
+#noinspection ShrinkerUnresolvedReference
 -keep @org.parceler.Parcel class * { *; }
 -keep class **$$Parcelable { *; }
 
 # Keep the BuildConfig
+#noinspection ShrinkerUnresolvedReference
 -keep class com.midtrans.sdk.coreflow.BuildConfig { *; }
 
 # Keep the support library

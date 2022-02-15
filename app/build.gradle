@@ -34,12 +34,10 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        //using obfuscation with pro-guard always make app crashed. although it have been added proguard rules.
-        //not yet find how to solve this error
-        /*debug {
+        debug {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }*/
+        }
     }
 
     compileOptions {
@@ -72,6 +70,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 
     //leak canary
+    //noinspection GradleDependency
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
 }
 

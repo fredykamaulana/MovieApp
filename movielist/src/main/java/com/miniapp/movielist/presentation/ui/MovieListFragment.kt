@@ -20,7 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickListener {
 
     private val vm: MovieListViewModel by viewModel()
-    private val movieCategoryAdapter: MovieCategoryAdapter by lazy { MovieCategoryAdapter(this) }
+    private var movieCategoryAdapter: MovieCategoryAdapter? = null
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_movie_list
 
@@ -37,6 +37,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
     }
 
     private fun setupView() {
+        movieCategoryAdapter = MovieCategoryAdapter(this)
         binding.rvWatchlist.adapter = movieCategoryAdapter
         binding.swipeRefreshLayout.apply {
             setOnRefreshListener { isRefreshing = false }
@@ -112,8 +113,8 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
                 }
                 is ResourceState.Success -> {
                     binding.layoutLoading.root.visibility = View.GONE
-                    movieCategoryAdapter.submitList(vm.groupByCategory(it.data).toMutableList())
-                    movieCategoryAdapter.notifyDataSetChanged()
+                    movieCategoryAdapter?.submitList(vm.groupByCategory(it.data).toMutableList())
+                    movieCategoryAdapter?.notifyDataSetChanged()
                 }
                 is ResourceState.Error -> {
                     binding.layoutLoading.root.visibility = View.GONE
@@ -126,6 +127,11 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
     override fun onClick(movieId: Int) {
         val uri = Uri.parse("miniApp://movieDetail/$movieId")
         findNavController().navigate(uri)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        movieCategoryAdapter = null
     }
 
 }

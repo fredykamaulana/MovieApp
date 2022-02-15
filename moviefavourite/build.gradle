@@ -21,9 +21,9 @@ android {
         release {
             proguardFiles 'proguard-rules-dynamic-features.pro'
         }
-        /*debug {
+        debug {
             proguardFiles 'proguard-rules-dynamic-features.pro'
-        }*/
+        }
     }
 
     compileOptions {

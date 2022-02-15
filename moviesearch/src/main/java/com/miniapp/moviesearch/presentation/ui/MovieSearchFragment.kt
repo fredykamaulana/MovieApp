@@ -21,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemClickListener {
 
     private val vm: MovieSearchViewModel by viewModel()
-    private val adapter: MovieSearchAdapter by lazy { MovieSearchAdapter(this) }
+    private var adapter: MovieSearchAdapter? = null
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_movie_search
 
@@ -62,6 +62,7 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
             }
         }
 
+        adapter = MovieSearchAdapter(this)
         binding.rvSearchMovie.adapter = adapter
     }
 
@@ -74,8 +75,8 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
                     if (it.data.isNotEmpty()) binding.layoutEmptyList.root.visibility = View.GONE
                     else binding.layoutEmptyList.root.visibility = View.VISIBLE
 
-                    adapter.submitList(it.data)
-                    adapter.notifyDataSetChanged()
+                    adapter?.submitList(it.data)
+                    adapter?.notifyDataSetChanged()
                 }
                 is RemoteResult.Error -> {
                     binding.layoutEmptyList.root.visibility = View.VISIBLE
@@ -90,4 +91,8 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
         findNavController().navigate(uri)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter = null
+    }
 }

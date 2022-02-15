@@ -28,6 +28,7 @@ private val loadModules by lazy {
     loadKoinModules(modules)
 }
 
+@Suppress("SpellCheckingInspection")
 val networkModule: Module = module {
 
     single {

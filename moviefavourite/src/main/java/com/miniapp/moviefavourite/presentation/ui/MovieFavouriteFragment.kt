@@ -21,7 +21,7 @@ class MovieFavouriteFragment : BaseFragment<FragmentMovieFavouriteBinding>(), On
     override fun getLayoutResourceId(): Int = R.layout.fragment_movie_favourite
 
     private val vm: MovieFavouriteViewModel by viewModel()
-    private val adapter: MovieFavouriteAdapter by lazy { MovieFavouriteAdapter(this) }
+    private var adapter: MovieFavouriteAdapter? = null
 
     override fun onAttach(context: Context) {
         injectKoinModules()
@@ -36,6 +36,7 @@ class MovieFavouriteFragment : BaseFragment<FragmentMovieFavouriteBinding>(), On
     }
 
     private fun setupView() {
+        adapter = MovieFavouriteAdapter(this)
         binding.rvMovieFavourite.adapter = adapter
     }
 
@@ -55,8 +56,8 @@ class MovieFavouriteFragment : BaseFragment<FragmentMovieFavouriteBinding>(), On
                         binding.layoutEmptyList.root.visibility = View.VISIBLE
                     }
 
-                    adapter.submitList(it.data)
-                    adapter.notifyDataSetChanged()
+                    adapter?.submitList(it.data)
+                    adapter?.notifyDataSetChanged()
                 }
                 is ResourceState.Error -> {
                     binding.layoutLoading.root.visibility = View.GONE
@@ -70,5 +71,10 @@ class MovieFavouriteFragment : BaseFragment<FragmentMovieFavouriteBinding>(), On
     override fun onClick(movieId: Int) {
         val uri = Uri.parse("miniApp://movieDetail/$movieId")
         findNavController().navigate(uri)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter = null
     }
 }
