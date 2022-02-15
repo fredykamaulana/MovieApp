@@ -20,7 +20,7 @@ class MovieSearchViewModel(private val useCase: IMovieSearchUseCase) : ViewModel
     @ObsoleteCoroutinesApi
     fun search(query: String) {
         viewModelScope.launch {
-            delay(700)
+            delay(2000)
             _searchResult.value = useCase.getMovieSearch(query).last()
         }
     }

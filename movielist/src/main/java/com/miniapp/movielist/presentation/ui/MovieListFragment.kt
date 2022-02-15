@@ -106,7 +106,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding>(), OnItemClickL
             }
         })
 
-        vm.getAllMovieList.observe(this, {
+        vm.getAllMovieList.observe(viewLifecycleOwner, {
             when (it) {
                 is ResourceState.Loading -> {
                     binding.layoutLoading.root.visibility = View.VISIBLE

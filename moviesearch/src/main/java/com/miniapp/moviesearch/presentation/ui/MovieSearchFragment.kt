@@ -49,6 +49,9 @@ class MovieSearchFragment : BaseFragment<FragmentMovieSearchBinding>(), OnItemCl
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
+                    if (newText?.isNotEmpty() == true || newText?.isNotBlank() == true) {
+                        vm.search(newText)
+                    }
                     return false
                 }
             }
